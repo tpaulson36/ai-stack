@@ -1,0 +1,65 @@
+{
+  "mcpServers": {
+
+    "firecrawl-mcp": {
+      "command": "node",
+      "args": [
+        "/Users/mini/Documents/Firecrawl_MCP/firecrawl-mcp-server/dist/index.js"
+      ],
+      "env": {
+        "FIRECRAWL_API_KEY": "YOUR_FIRECRAWL_API_KEY"
+      }
+    },
+
+    "google-workspace": {
+      "command": "node",
+      "args": [
+        "/Users/mini/Documents/MCPs/GoogleWorkspace_MCP/mcp-google-workspace/dist/index.js"
+      ],
+      "env": {
+        "GOOGLE_CREDENTIALS_PATH": "/Users/mini/Documents/MCPs/GoogleWorkspace_MCP/mcp-google-workspace/credentials.json",
+        "GOOGLE_TOKEN_PATH": "/Users/mini/Documents/MCPs/GoogleWorkspace_MCP/mcp-google-workspace/token.json"
+      }
+    },
+
+    "notebooklm": {
+      "command": "nlm",
+      "args": ["serve"]
+    },
+
+    "puppeteer": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-puppeteer"]
+    },
+
+    "stitch": {
+      "command": "npx",
+      "args": ["@_davideast/stitch-mcp", "serve"]
+    },
+
+    "connect-apps": {
+      "type": "http",
+      "url": "YOUR_COMPOSIO_MCP_URL",
+      "headers": {
+        "x-api-key": "YOUR_COMPOSIO_API_KEY"
+      }
+    },
+
+    "remotion": {
+      "command": "npx",
+      "args": ["@remotion/mcp@latest"]
+    },
+
+    "adb": {
+      "command": "npx",
+      "args": ["-y", "adb-mcp"]
+    }
+
+  },
+
+  "preferences": {
+    "coworkScheduledTasksEnabled": true,
+    "ccdScheduledTasksEnabled": true,
+    "sidebarMode": "code"
+  }
+}

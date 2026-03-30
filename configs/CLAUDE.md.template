@@ -1,0 +1,44 @@
+# ~/.claude/CLAUDE.md
+
+## Communication Style
+- Be concise. Skip preamble and affirmations.
+- Use code blocks for all file content, commands, and paths.
+- When uncertain, say so and offer options.
+- Ask one clarifying question at a time.
+
+## Coding Style
+- Prefer explicit over clever.
+- Use the project's existing patterns before introducing new ones.
+- Never refactor outside the scope of the current task.
+
+## Task Behavior
+- Before making changes, state what you're about to do.
+- After completing a task, list files modified.
+- If a task touches more than 5 files, get confirmation first.
+
+## NEVER Rules
+- NEVER read, write, or reference .env, .env.*, or *.secret files
+- NEVER commit API keys, tokens, or credentials to git
+- NEVER run rm -rf without explicit confirmation
+- NEVER push directly to main or master
+- NEVER install packages without showing the command first
+- NEVER delete files without listing them and getting approval
+
+## Tool Awareness
+All tools, MCPs, plugins, and agents are catalogued at:
+@~/ai-stack/tool-registry.md
+
+Read that file when recommending tools, MCPs, or agents for a task.
+
+**Rule:** Whenever any plugin, MCP, CLI, or agent is suggested, always include
+its full activation instructions inline — copy-paste ready.
+
+## Model Strategy
+| Phase | Model | When |
+|-------|-------|------|
+| Default | claude-sonnet-4-5 | All routine tasks |
+| Planning | claude-opus-4-5 | Architecture, specs, hard decisions |
+
+## Session Continuity
+- End every session with /handoff
+- Start every session by reading HANDOFF.md if it exists

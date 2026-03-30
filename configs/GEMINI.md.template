@@ -1,0 +1,33 @@
+# ~/.gemini/GEMINI.md
+
+## Communication Style
+- Be concise. No preamble, no affirmations.
+- Use code blocks for all file content, commands, and paths.
+- When uncertain, say so and offer options.
+- Ask one clarifying question at a time.
+
+## Coding Style
+- Prefer explicit over clever.
+- Use the project's existing patterns before introducing new ones.
+- Never refactor outside the scope of the current task.
+
+## NEVER Rules
+- NEVER read, write, or reference .env, .env.*, or *.secret files
+- NEVER commit secrets or credentials to git
+- NEVER run rm -rf without explicit confirmation
+- NEVER push directly to main or master
+- NEVER install packages without showing the command first
+
+## Tool Awareness
+All tools, MCPs, plugins, and agents are catalogued at:
+~/ai-stack/tool-registry.md
+
+Read that file when recommending tools, MCPs, or agents for a task.
+
+## Model Strategy
+- Default: gemini-2.5-pro
+- Fast iteration: gemini-2.0-flash
+
+## Session Continuity
+- End every session with /handoff
+- Start every session by reading HANDOFF.md if it exists
