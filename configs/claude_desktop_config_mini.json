@@ -4,7 +4,7 @@
     "firecrawl-mcp": {
       "command": "node",
       "args": [
-        "/Users/mini/Documents/Firecrawl_MCP/firecrawl-mcp-server/dist/index.js"
+        "/Users/Botman/Documents/Firecrawl_MCP/firecrawl-mcp-server/dist/index.js"
       ],
       "env": {
         "FIRECRAWL_API_KEY": "YOUR_FIRECRAWL_API_KEY"
@@ -14,11 +14,11 @@
     "google-workspace": {
       "command": "node",
       "args": [
-        "/Users/mini/Documents/MCPs/GoogleWorkspace_MCP/mcp-google-workspace/dist/index.js"
+        "/Users/Botman/Documents/MCPs/GoogleWorkspace_MCP/mcp-google-workspace/dist/index.js"
       ],
       "env": {
-        "GOOGLE_CREDENTIALS_PATH": "/Users/mini/Documents/MCPs/GoogleWorkspace_MCP/mcp-google-workspace/credentials.json",
-        "GOOGLE_TOKEN_PATH": "/Users/mini/Documents/MCPs/GoogleWorkspace_MCP/mcp-google-workspace/token.json"
+        "GOOGLE_CREDENTIALS_PATH": "/Users/Botman/Documents/MCPs/GoogleWorkspace_MCP/mcp-google-workspace/credentials.json",
+        "GOOGLE_TOKEN_PATH": "/Users/Botman/Documents/MCPs/GoogleWorkspace_MCP/mcp-google-workspace/token.json"
       }
     },
 
