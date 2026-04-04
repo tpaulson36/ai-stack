@@ -1,42 +1,70 @@
 # AI Stack — Tool Registry
 # Complete inventory of every tool in this stack.
-# Import this into your CLAUDE.md and GEMINI.md for automatic tool awareness.
-# Last updated: 2026-03-29
+# Last updated: 2026-04-04
 
 ---
 
-## MCPs — ~/Documents/MCPs/
+## MCPs — Active & Connected
 
-| Name | Folder | Purpose | Recommended Machines |
-|------|--------|---------|---------------------|
-| Firecrawl | `~/Documents/Firecrawl_MCP/` | Web scraping, crawling, search | All |
-| Google Workspace | `GoogleWorkspace_MCP/` | Gmail, Calendar, Drive | All |
-| NotebookLM | `NotebookLM_MCP/` | Google NotebookLM queries | All |
-| Puppeteer | via npx | Browser automation | All |
-| Stitch | via npx | Google Stitch design-to-code | All |
-| Composio connect-apps | via HTTP | 500+ app actions | All |
-| Get Shit Done | `Get_Shit_Done_MCP/` | GSD meta-prompting | All |
-| Chatterbox | `Chatterbox/` | Multilingual TTS | All |
-| Blender | `Blender_MCP/` | Blender 3D control | GPU machine |
-| Unreal Engine | `Unreal_Engine_MCP/` | Unreal Engine control | GPU machine |
-| Premiere Pro | `Premiere_Pro/` | Adobe Premiere automation | GPU machine |
-| Remotion | via npx `@remotion/mcp@latest` | Programmatic video rendering | Rendering machine |
-| ADB | `adb-mcp/` | Android Debug Bridge | Dev machine |
-| WiFi/RuView | `wifi_RuView/` | WiFi signal analysis | Any |
+### Productivity & Workspace
+| Name | Purpose |
+|------|---------|
+| Google Workspace | Docs, Sheets, Slides, Forms, Gmail, Calendar, Drive, Contacts, Tasks, Chat — full suite |
+| Gmail (standalone) | Lightweight email read/search/draft — prefer for email-only tasks |
+| Google Calendar (standalone) | Lightweight calendar read/write — prefer for calendar-only tasks |
+| Google Drive (standalone) | File search and fetch |
+| Notion | Create/update/search pages and databases |
+| Airtable | Read/write bases, tables, and records |
 
-### Claude Desktop config location:
-`~/Library/Application Support/Claude/claude_desktop_config.json`
-Templates in `~/ai-stack/configs/` — copy the one matching your machine role.
+### Automation
+| Name | Purpose |
+|------|---------|
+| Make.com | Manage scenarios, data stores, webhooks (2-slot limit) |
+| Scheduled Tasks | Create/manage Cowork scheduled tasks |
+
+### Development & Data
+| Name | Purpose |
+|------|---------|
+| Supabase | DB queries, migrations, edge functions, project management |
+| Firecrawl | Web scraping, crawling, structured extraction |
+| HuggingFace | Search ML models, papers, datasets, Spaces |
+
+### Design
+| Name | Purpose |
+|------|---------|
+| Figma | Read design context, screenshots, variable defs, design system |
+| Stitch | Generate UI screens from text, apply design systems |
+
+### Research
+| Name | Purpose |
+|------|---------|
+| NotebookLM | Create notebooks, add sources, query, export artifacts |
+| Perplexity | Quick web search with citations |
+
+### Browser & Mac Control
+| Name | Purpose |
+|------|---------|
+| Claude in Chrome | Full browser automation in user's Chrome session |
+| Control Chrome | Tab management, JS execution, page content reads |
+| Puppeteer | Headless browser automation, screenshots |
+| Control your Mac | osascript — shell commands, open apps, write files on Mac |
+
+### Creative
+| Name | Purpose |
+|------|---------|
+| Three.js | 3D scene creation and learning |
 
 ---
 
 ## CLIs — ~/Documents/CLIs/
 
-| Name | Folder | Purpose | Auth |
-|------|--------|---------|------|
-| Gemini CLI | `Gemini_CLI/gemini-cli/` | Google Gemini AI | Google OAuth on first run |
-| Google Workspace CLI | `GoogleWorkspace_CLI/` | Google Workspace automation | `npm run auth` |
-| Playwright CLI | `PlayWright_CLI/playwright/` | Browser automation | None |
+| Name | Auth | Purpose |
+|------|------|---------|
+| gh | ✅ tpaulson36 | GitHub repos, PRs, issues, CI/CD |
+| vercel | ✅ tyler-1200 | Deploys, env vars, logs |
+| supabase | ✅ authenticated | DB migrations, edge functions, type gen |
+| gcloud | ✅ tyler@tylerpaulsonpictures.com | Google Cloud + Drive storage |
+| aws | ❌ not in stack | Replaced by Google Drive |
 
 ---
 
@@ -44,13 +72,13 @@ Templates in `~/ai-stack/configs/` — copy the one matching your machine role.
 
 | Name | Path | Purpose |
 |------|------|---------|
+| GSD | `Plugins/General/GSD/` | Meta-prompting, context engineering, spec-driven dev (v1.31.0) |
 | Agency Agents | `Plugins/Agency_Agents/` | 60+ specialist agents + NEXUS orchestration |
 | God Mode 3 | `Plugins/God_Mode_3/` | Multi-model web UI (50+ models via OpenRouter) |
 | Oh My Claude Code | `Plugins/Oh_My_Claude_Code/` | Claude Code enhancement: hooks, missions, skills |
 | PaperClip | `Plugins/Agents/PaperClip/` | Context-aware task management |
 | claude-mem | `Plugins/claude-mem/` | Persistent memory layer |
 | CLI-Anything | `Plugins/CLI_Build/CLI-Anything/` | Meta-CLI builder |
-| GSD | `Plugins/General/GSD/` | Get Shit Done meta-prompting |
 | SuperPowers | `Plugins/General/SuperPowers/` | Claude Code workflow enhancements |
 | mem0 | `Plugins/Memory/mem0/` | Memory system |
 | Letta (MemGPT) | `Plugins/Memory/MemGPT/` | Persistent memory server |
@@ -62,73 +90,36 @@ Templates in `~/ai-stack/configs/` — copy the one matching your machine role.
 
 ---
 
-## Claude Skills — ~/Documents/Claude_Skills/
+## Automation Stack
 
-| Name | Path | Purpose |
-|------|------|---------|
-| awesome-claude-skills | `Claude_Skills/awesome-claude-skills/` | ComposioHQ skill collection |
-| composio-skills | `Claude_Skills/awesome-claude-skills/composio-skills/` | 500+ per-service automation skills |
-| connect-apps-plugin | `Claude_Skills/awesome-claude-skills/connect-apps-plugin/` | Composio plugin for Claude Code |
-| document-skills | `Claude_Skills/awesome-claude-skills/document-skills/` | docx, pdf, pptx, xlsx |
+| Tool | Location | Status |
+|------|----------|--------|
+| n8n | `~/Documents/n8n_github/` (Docker) | Self-hosted at localhost:5678 on mini |
+| Make.com | cloud | 2-slot limit — AI Potential Map + 1 TBD |
 
-### Activate connect-apps:
-```bash
-claude --plugin-dir ~/Documents/Claude_Skills/awesome-claude-skills/connect-apps-plugin
-# then: /connect-apps:setup
-```
-
----
-
-## Other Tools
-
-| Name | Path | Purpose |
-|------|------|---------|
-| n8n | `~/Documents/n8n_github/` | Workflow automation (Docker) |
-| Firecrawl MCP | `~/Documents/Firecrawl_MCP/` | Web scraping — lives at Documents root |
-
----
-
-## Agent Selection — Quick Reference
-
-**Single task** → "Activate [Agent Name] and [task]"
-**Multi-domain** → NEXUS-Micro (2-5 agents, 1-5 days)
-**Feature build** → NEXUS-Sprint (15-25 agents, 2-6 weeks)
-**Full product** → NEXUS-Full (all phases, 12-24 weeks)
-
-Full activation prompts: `~/Documents/Plugins/Agency_Agents/strategy/QUICKSTART.md`
-
----
-
-## Activation — Copy-Paste Commands
-
-### Oh My Claude Code
-```bash
-/plugin marketplace add https://github.com/Yeachan-Heo/oh-my-claudecode
-/plugin install oh-my-claudecode
-# then: /omc-setup
-```
-
-### God Mode 3
-```bash
-~/Documents/Plugins/God_Mode_3/launch.sh
-# opens http://localhost:8000 — bring your OpenRouter API key
-```
-
-### Agency Agents
-```bash
-mkdir -p ~/.claude/agents
-cp -r ~/Documents/Plugins/Agency_Agents/* ~/.claude/agents/
-# then: "Activate [Agent Name] and [task]"
-```
-
-### n8n
+### Start n8n
 ```bash
 cd ~/Documents/n8n_github && docker-compose up -d
-# opens http://localhost:5678
 ```
 
-### Letta memory server
-```bash
-letta server
-# runs at http://localhost:8283
-```
+---
+
+## Machine Configs — ~/ai-stack/configs/
+
+| File | Machine |
+|------|---------|
+| `claude_desktop_config_travel.json` | Laptop |
+| `claude_desktop_config_mini.json` | Mac Mini |
+| `claude_desktop_config_alien.json` | Desktop (GPU) |
+
+---
+
+## Claude Desktop — Active MCPs (7)
+firecrawl-mcp, google-workspace, notebooklm-mcp, puppeteer, perplexity-mcp, stitch, connect-apps (Composio)
+
+---
+
+## Chatterbox TTS
+- Path: `~/Documents/MCPs/Chatterbox/`
+- Status: installed, not connected to Claude Desktop
+- To activate: run `python gradio_tts_app.py` on mini → exposes MCP at localhost:7860/mcp
