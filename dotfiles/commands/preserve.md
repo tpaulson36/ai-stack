@@ -15,6 +15,6 @@ Extract a decision, principle, or constraint from this session and lock it perma
 
 3. Append it to **both**:
    - The project's `CLAUDE.md` under a `## Preserved Decisions` section (create if it doesn't exist)
-   - `~/Documents/TysThoughts/Claude/Decisions/decisions.md`
+   - `~/Dropbox/Obsidian/Ty's Thoughts/Claude/Decisions/decisions.md`
 
 4. Confirm what was written and where.

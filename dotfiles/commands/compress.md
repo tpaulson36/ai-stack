@@ -8,7 +8,7 @@ Write a concise session log capturing what happened this session.
 4. List open items / next steps with checkboxes
 5. Save the log to:
    - Project root `Session Logs/YYYY-MM-DD-<topic>.md` if that folder exists
-   - `~/Documents/TysThoughts/Claude/Session Logs/YYYY-MM-DD-<topic>.md` always
+   - `~/Dropbox/Obsidian/Ty's Thoughts/Claude/Session Logs/YYYY-MM-DD-<topic>.md` always
 
 Format:
 ```
