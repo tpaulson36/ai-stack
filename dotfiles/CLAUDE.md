@@ -97,3 +97,9 @@ user remembers the commands. Full activation steps are in:
 ## Session Continuity
 - End every session with `/handoff` — writes HANDOFF.md to project root
 - Start every session by reading HANDOFF.md if it exists
+
+## Obsidian Vault
+- Location: `~/Dropbox/Obsidian/Ty's Thoughts/`
+- Session logs → `Claude/Session Logs/`
+- Permanent decisions → `Claude/Decisions/decisions.md`
+- Research → `Claude/Research/`
