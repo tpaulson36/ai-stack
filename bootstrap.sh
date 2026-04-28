@@ -215,6 +215,7 @@ clone_mcp "Premiere_Pro"        "adobe/adobe-mcp"
 clone_mcp "Stitch_MCP"          "stitchfix/mcp-server"
 clone_mcp "adb-mcp"             "jlowin/adb-mcp"
 clone_mcp "wifi_RuView"         "ruview/wifi-mcp"
+clone_mcp "Perplexity_MCP"      "jsonallen/perplexity-mcp"
 
 info "filesystem/memory/fetch/github MCPs run via npx — no install needed"
 
