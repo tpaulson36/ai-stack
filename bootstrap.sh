@@ -145,15 +145,17 @@ clone_cli() {
   local dest="$CLI_DIR/$folder/$(basename "$repo" .git)"
   if [[ ! -d "$dest/.git" ]]; then
     mkdir -p "$CLI_DIR/$folder"
-    git clone --depth=1 "https://github.com/$repo.git" "$dest"
-    success "$folder cloned"
+    if git clone --depth=1 "https://github.com/$repo.git" "$dest" 2>/dev/null; then
+      success "$folder cloned"
+    else
+      warn "$folder — repo not found: $repo (skipping)"
+    fi
   else
     skip "$folder"
   fi
 }
 
 clone_cli "Gemini_CLI"          "google-gemini/gemini-cli"
-clone_cli "GoogleWorkspace_CLI" "googleworkspace/google-workspace-mcp"
 clone_cli "PlayWright_CLI"      "microsoft/playwright"
 
 # =============================================================================
@@ -168,8 +170,11 @@ clone_mcp() {
   local dest="$MCP_DIR/$folder/$(basename "$repo" .git)"
   if [[ ! -d "$dest/.git" ]]; then
     mkdir -p "$MCP_DIR/$folder"
-    git clone --depth=1 "https://github.com/$repo.git" "$dest"
-    success "$folder MCP cloned"
+    if git clone --depth=1 "https://github.com/$repo.git" "$dest" 2>/dev/null; then
+      success "$folder MCP cloned"
+    else
+      warn "$folder MCP — repo not found: $repo (skipping)"
+    fi
   else
     skip "$folder MCP"
   fi
@@ -205,7 +210,12 @@ else
   skip "Firecrawl MCP"
 fi
 
-clone_mcp "GoogleWorkspace_MCP" "googleworkspace/mcp-google-workspace"
+# GoogleWorkspace_MCP already installed as google_workspace_mcp
+if [[ ! -d "$MCP_DIR/GoogleWorkspace_MCP/google_workspace_mcp/.git" ]] && [[ ! -d "$MCP_DIR/GoogleWorkspace_MCP/mcp-google-workspace/.git" ]]; then
+  warn "GoogleWorkspace_MCP — not found, install manually"
+else
+  skip "GoogleWorkspace_MCP"
+fi
 clone_mcp "NotebookLM_MCP"      "buxuku/notebooklm-mcp"
 clone_mcp "Pupeteer_MCP"        "modelcontextprotocol/servers"
 clone_mcp "Remotion_MCP"        "remotion-dev/remotion"
@@ -231,8 +241,11 @@ clone_plugin() {
   local dest="$PLUGINS_DIR/$category/$folder/$(basename "$repo" .git)"
   if [[ ! -d "$dest/.git" ]]; then
     mkdir -p "$PLUGINS_DIR/$category/$folder"
-    git clone --depth=1 "https://github.com/$repo.git" "$dest"
-    success "$category/$folder cloned"
+    if git clone --depth=1 "https://github.com/$repo.git" "$dest" 2>/dev/null; then
+      success "$category/$folder cloned"
+    else
+      warn "$category/$folder — repo not found: $repo (skipping)"
+    fi
   else
     skip "$category/$folder/$(basename "$repo")"
   fi
@@ -294,8 +307,11 @@ fi
 SP_DEST="$PLUGINS_DIR/General/SuperPowers/superpowers"
 if [[ ! -d "$SP_DEST/.git" ]]; then
   mkdir -p "$PLUGINS_DIR/General/SuperPowers"
-  git clone --depth=1 https://github.com/superpowers-ai/superpowers.git "$SP_DEST"
-  success "SuperPowers cloned"
+  if git clone --depth=1 https://github.com/superpowers-ai/superpowers.git "$SP_DEST" 2>/dev/null; then
+    success "SuperPowers cloned"
+  else
+    warn "SuperPowers — repo not found (skipping)"
+  fi
 else
   skip "SuperPowers"
 fi
